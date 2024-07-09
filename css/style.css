@@ -46,7 +46,7 @@ body{
 	font-weight: 400;
 	font-size: 13px;
 	height:100%;
-	text-align:center;
+	text-align:left;
 	background:#fff;
 	color:#000;
 	font-family: 'Ek Mukta', sans-serif;
@@ -300,7 +300,7 @@ h7{
 	top:45% !important;
 }
 .fixed-column-content-wrap h2 {
-	text-align:center;
+	text-align:left;
 	color:#fff;
 	font-size:44px;
 	text-transform:uppercase;

@@ -11,18 +11,19 @@ var timeoutId; // Initialize a variable to store the timeout ID
 
 function initInshot() {
     "use strict";
-    //   loader ------------------
+    // loader ------------------
     $(".spinner").fadeOut(500, function () {
         $("#main").animate({
             opacity: "1"
         }, 500);
     });
-    //   Background image ------------------
-    var a = $(".bg");
-    a.each(function (a) {
+
+    // Background image ------------------
+    $(".bg").each(function () {
         if ($(this).attr("data-bg")) $(this).css("background-image", "url(" + $(this).data("bg") + ")");
     });
-    //   css ------------------
+
+    // css ------------------
     function dhk() {
         $(".alt").each(function () {
             $(this).css({
@@ -32,35 +33,29 @@ function initInshot() {
         });
     }
     dhk();
-    $(window).on("resize", function () {
-        dhk();
-    });
-    //   Isotope------------------
-    function e() {
-        if ($(".gallery-items").length) {
-            var a = $(".gallery-items").isotope({
-                singleMode: true,
-                columnWidth: ".grid-sizer, .grid-sizer-second, .grid-sizer-three",
-                itemSelector: ".gallery-item, .gallery-item-second, .gallery-item-three",
-                transformsEnabled: true,
-                transitionDuration: "700ms",
-                resizable: true
-            });
-            a.imagesLoaded(function () {
-                a.isotope("layout");
-            });
-            $(".gallery-filters").on("click", "a.gallery-filter", function (b) {
-                var c = $(this).attr("data-filter"),
-                    d = $(this).text();
-                b.preventDefault();
-                var c = $(this).attr("data-filter");
-                a.isotope({
-                    filter: c
-                });
-                $(".gallery-filters a.gallery-filter").removeClass("gallery-filter-active");
-                $(this).addClass("gallery-filter-active");
-            });
-        }
+    $(window).on("resize", dhk);
+
+    // Isotope------------------
+    if ($(".gallery-items").length) {
+        var $gallery = $(".gallery-items").isotope({
+            singleMode: true,
+            columnWidth: ".grid-sizer, .grid-sizer-second, .grid-sizer-three",
+            itemSelector: ".gallery-item, .gallery-item-second, .gallery-item-three",
+            transformsEnabled: true,
+            transitionDuration: "700ms",
+            resizable: true
+        });
+        $gallery.imagesLoaded(function () {
+            $gallery.isotope("layout");
+        });
+
+        $(".gallery-filters").on("click", "a.gallery-filter", function (event) {
+            event.preventDefault();
+            var filterValue = $(this).attr("data-filter");
+            $gallery.isotope({ filter: filterValue });
+            $(".gallery-filters a.gallery-filter").removeClass("gallery-filter-active");
+            $(this).addClass("gallery-filter-active");
+        });
     }
     e();
 	$(".gallery-item").on('touchstart', function() {
@@ -79,7 +74,10 @@ function initInshot() {
             mousewheelControl: true,
             mousewheelReleaseOnEdges: true,
             mousewheelSensitivity: 1,
-            preloadImages: true,
+            preloadImages: false,
+            lazy: {
+                loadPrevNext: true,
+            },
             updateOnImagesReady: true,
             pagination: '.swiper-pagination',
             paginationType: 'fraction',
@@ -97,7 +95,10 @@ function initInshot() {
             mousewheelControl: true,
             mousewheelReleaseOnEdges: true,
             mousewheelSensitivity: 1,
-            preloadImages: true,
+            preloadImages: false,
+            lazy: {
+                loadPrevNext: true,
+            },
             updateOnImagesReady: true,
             scrollbar: '.swiper-scrollbar',
             scrollbarHide: false,
@@ -150,7 +151,10 @@ function initInshot() {
             mousewheelControl: true,
             mousewheelReleaseOnEdges: true,
             mousewheelSensitivity: 1,
-            preloadImages: true,
+            preloadImages: false,
+            lazy: {
+                loadPrevNext: true,
+            },
             updateOnImagesReady: true,
             pagination: '.swiper-pagination',
             paginationType: 'fraction',
@@ -538,7 +542,7 @@ function initInshot() {
     }
      }
  // parallax ------------------
-function initparallax() {
+ function initparallax() {
     var a = {
         Android: function () {
             return navigator.userAgent.match(/Android/i);
@@ -559,17 +563,20 @@ function initparallax() {
             return a.Android() || a.BlackBerry() || a.iOS() || a.Opera() || a.Windows();
         }
     };
-    trueMobile = a.any();
-    if (null == trueMobile) {
+    var trueMobile = a.any();
+    if (!trueMobile) {
         var b = new Scrollax();
         b.reload();
         b.init();
+    } else {
+        $(".background-video").remove();
     }
-    if (trueMobile) $(".background-video").remove();
 }
+
 document.addEventListener('gesturestart', function (e) {
-	e.preventDefault();
+    e.preventDefault();
 });
+
 $(document).ready(function () {
     console.log("ready function called");
     initInshot();
