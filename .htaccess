@@ -1,11 +1,14 @@
 # Force HTTPS redirection
 RewriteEngine On
-RewriteCond %{HTTPS} off
+
+# Redirect all www to non-www
+RewriteCond %{HTTP_HOST} ^www\.grantrobertsart\.com [NC]
+RewriteRule ^(.*)$ https://grantrobertsart.com/$1 [L,R=301]
+
+# Ensure HTTPS
+RewriteCond %{HTTPS} !=on
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# Redirect non-www to www
-RewriteCond %{HTTP_HOST} ^example.com [NC]
-RewriteRule ^(.*)$ http://www.example.com/$1 [L,R=301]
 
 <IfModule mod_deflate.c>
     AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/x-javascript application/json application/xml
