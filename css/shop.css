@@ -195,6 +195,7 @@
 	z-index:16;
 	padding:100px 30px;
 	overflow:auto;
+	transform: translate3d(0,0,0);
 	-webkit-transform: translate3d(0,0,0);
 }
 .cart-modal .btn  , .show-exfilter{
@@ -291,7 +292,8 @@
 	width:100%;
 	right:0;
 	z-index:15;
- 	-webkit-transform: translate3d(0,0,0);
+ 	transform: translate3d(0,0,0);
+	-webkit-transform: translate3d(0,0,0);
 	opacity:0.4;
 	display:none;
 }
@@ -306,7 +308,8 @@
 	color:#fff;
 	z-index:5;
 	cursor:pointer;
- 	-webkit-transform: translate3d(0,0,0);
+ 	transform: translate3d(0,0,0);
+	-webkit-transform: translate3d(0,0,0);
 }
 .show-cart span {
 	position:absolute;

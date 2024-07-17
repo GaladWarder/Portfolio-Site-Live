@@ -291,6 +291,7 @@ h7{
 	z-index:6;
 	width:35%;
 	right:0;
+	transform: translate3d(0,0,0);
 	-webkit-transform: translate3d(0,0,0);
 }
 .fixed-column-color {
@@ -301,6 +302,7 @@ h7{
 	width:35%;
 	right:0;
 	background-color: #121521;
+	transform: translate3d(0,0,0);
 	-webkit-transform: translate3d(0,0,0);
 	overflow: hidden;
 }
@@ -363,6 +365,7 @@ header.main-header {
 	padding:0 50px;
 	border-top:10px solid #292929;
 	box-sizing:border-box;
+	transform: translate3d(0,0,0);
 	-webkit-transform: translate3d(0,0,0);
 	    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.07);
 }
@@ -575,6 +578,7 @@ nav li  a.act-link , .nav-holder nav li a:hover  , nav.asl li  a.act-scrlink {
 	bottom:0;
 	background:#fff;
 	padding:50px 30px;
+	transform: translate3d(0,0,0);
 	-webkit-transform: translate3d(0,0,0);
 }
 .sb-overlay {
@@ -587,6 +591,7 @@ nav li  a.act-link , .nav-holder nav li a:hover  , nav.asl li  a.act-scrlink {
 	background:#292929;
 	opacity:0.8;
 	z-index:18;
+	transform: translate3d(0,0,0);
 	-webkit-transform: translate3d(0,0,0);
 }
 .sb-widget-wrap {
@@ -716,6 +721,7 @@ footer.fixed-footer , .scroll-footer{
 	bottom:0;
 	padding:0 50px;
 	border-bottom:10px solid #292929;
+	transform: translate3d(0,0,0);
 	-webkit-transform: translate3d(0,0,0);
 	    box-shadow: 0px -2px 3px 0px rgba(0, 0, 0, 0.04);
 }
@@ -932,6 +938,7 @@ footer.scroll-footer {
 	bottom:80px;
 	right:0;
 	z-index:2;
+	transform: translate3d(0,0,0);
 	-webkit-transform: translate3d(0,0,0);
 }
 .transaparent-text-wrap {
@@ -1341,6 +1348,7 @@ section.parallax-section .overlay {
 	cursor:pointer;
 	display:none;
 	border-radius:3px;
+	transform: translate3d(0,0,0);
 	-webkit-transform: translate3d(0,0,0);
 }
 .to-top:hover {
@@ -1455,7 +1463,7 @@ section.parallax-section .overlay {
 .hid-det-items  .thumb-info {
 	opacity:0;
 	visibility:hidden;
-	botoom:-190px;
+	bottom:-190px;
 }
 .hid-det-items .gallery-item:hover .thumb-info{
 	opacity:1;
@@ -1535,6 +1543,7 @@ section.parallax-section .overlay {
 	overflow:auto;
 	width:450px;
 	padding:100px 50px 30px;
+	transform: translate3d(0,0,0);
 	-webkit-transform: translate3d(0,0,0);
 }
 .fix-pr-det.hid-det {
@@ -1553,6 +1562,7 @@ section.parallax-section .overlay {
 	background:#292929;
 	opacity:0.6;
 	display:none;
+	transform: translate3d(0,0,0);
 	-webkit-transform: translate3d(0,0,0);
 }
 .fix-pr-det.isfsdet , .det-overlay.isfsdet{
@@ -1729,6 +1739,7 @@ section.parallax-section .overlay {
 	width:300px;
 	bottom:80px;
 	z-index:40;
+	transform: translate3d(0,0,0);
 	-webkit-transform: translate3d(0,0,0);
 	padding:0 50px;
 }
@@ -2126,6 +2137,7 @@ section.parallax-section .overlay {
 	padding-left:30px;
 	color:#999;
 	border:0;
+	appearance: none;
 	-webkit-appearance: none;
 }
 .contact-form-holder.transparent-form #contact-form input[type="text"] , .contact-form-holder.transparent-form #contact-form textarea  {
@@ -2156,6 +2168,7 @@ section.parallax-section .overlay {
 	padding:15px 30px 15px 30px;
 	line-height:17px;
 	cursor:pointer;
+	appearance: none;
 	-webkit-appearance: none;
 	-webkit-transition: all 200ms linear;
     -moz-transition: all 200ms linear;
@@ -2914,6 +2927,7 @@ header.main-header , footer.fixed-footer, footer.scroll-footer {
 @media only screen and (-webkit-min-device-pixel-ratio: 2) {
 .bg {
 	background-attachment: scroll !important;
+	background-size:cover;
 	-webkit-background-size:cover;
 	background-position:center;
 }
