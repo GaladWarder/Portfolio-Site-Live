@@ -58,7 +58,7 @@ body{
 	font-weight: 400;
 	font-size: 13px;
 	height:100%;
-	text-align:left;
+	text-align:center;
 	background:#fff;
 	color:#000;
 	font-family: 'Ek Mukta', sans-serif;
@@ -171,6 +171,7 @@ h7{
 	margin:0 auto;
 	position: relative;
 	z-index:5;
+	text-align:left;
 }
 .container.big-container{
 	max-width:1224px;
